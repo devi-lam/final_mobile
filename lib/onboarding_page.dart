@@ -33,6 +33,7 @@ class OnboardingPage extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 25.0,
+                fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),

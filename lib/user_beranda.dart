@@ -156,11 +156,12 @@ class UserDashboard extends StatelessWidget {
   // ---- Widget Builder -----
 
   Widget buildStatusCard(String count, String label, Color color) {
+      final Color bg = color.withOpacity(0.1);
     return Expanded(
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
-          color: color.withOpacity(0.1),
+          color: bg,
           borderRadius: BorderRadius.circular(15),
           border: Border(left: BorderSide(color: color, width: 5)),
         ),
