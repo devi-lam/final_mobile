@@ -38,15 +38,13 @@ class _RegisterPageState extends State<RegisterPage> {
     try {
 
       final user = await AuthController().registerUser(email, pass);
-      if (user != null) {
-        try {
-          await user.updateDisplayName(name);
-          await user.reload();
-        } catch (_){
+      try {
+        await user.updateDisplayName(name);
+        await user.reload();
+      } catch (_){
 
-        }
       }
-      if (!mounted) return;
+          if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Registrasi berhasil')));
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const LoginPage()));
     } catch (e) {
